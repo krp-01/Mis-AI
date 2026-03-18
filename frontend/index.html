@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="authScreen" class="center-screen">
+        <div class="auth-card large-card">
+            <h1>MIS</h1>
+            <p class="subtitle">Memory Identity Stratified</p>
+
+            <div class="auth-tabs">
+                <button id="showLoginBtn" class="tab-btn active" onclick="showLogin()">Login</button>
+                <button id="showSignupBtn" class="tab-btn" onclick="showSignup()">Sign Up</button>
+            </div>
+
+            <div id="loginBox">
+                <input id="loginUser" type="text" placeholder="Username">
+                <input id="loginPass" type="password" placeholder="Parola">
+                <button class="main-btn" onclick="login()">Intra in cont</button>
+            </div>
+
+            <div id="signupBox" style="display:none;">
+                <input id="signupUser" type="text" placeholder="Username">
+                <input id="signupName" type="text" placeholder="Nume afisat">
+                <input id="signupPass" type="password" placeholder="Parola">
+
+                <h3>Test de personalitate</h3>
+
+                <label>Cat de mult iti place sa iti asumi riscuri? (1-5)</label>
+                <input id="q_risc" type="number" min="1" max="5" placeholder="1-5">
+
+                <label>Cat de sociabil esti? (1-5)</label>
+                <input id="q_social" type="number" min="1" max="5" placeholder="1-5">
+
+                <label>Cat de organizat esti? (1-5)</label>
+                <input id="q_organizare" type="number" min="1" max="5" placeholder="1-5">
+
+                <label>Cat de emotional esti? (1-5)</label>
+                <input id="q_emotie" type="number" min="1" max="5" placeholder="1-5">
+
+                <label>Cat de rabdator esti? (1-5)</label>
+                <input id="q_rabdare" type="number" min="1" max="5" placeholder="1-5">
+
+                <label>Cat de usor te adaptezi la schimbari? (1-5)</label>
+                <input id="q_adaptare" type="number" min="1" max="5" placeholder="1-5">
+
+                <label>Cat de disciplinat esti? (1-5)</label>
+                <input id="q_disciplina" type="number" min="1" max="5" placeholder="1-5">
+
+                <label>Cat de multa incredere ai in tine? (1-5)</label>
+                <input id="q_incredere" type="number" min="1" max="5" placeholder="1-5">
+
+                <button class="main-btn" onclick="signup()">Creeaza cont</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="chatScreen" style="display:none;">
+        <aside class="sidebar">
+            <h2>MIS</h2>
+            <div class="profile-box">
+                <div id="profileName">Utilizator</div>
+                <div id="profileUser">@username</div>
+            </div>
+
+            <div class="mode-box">
+                <label>
+                    <input type="radio" name="mode" value="local" checked>
+                    Local
+                </label>
+                <label>
+                    <input type="radio" name="mode" value="ai">
+                    AI
+                </label>
+            </div>
+
+            <button class="secondary-btn" onclick="logout()">Logout</button>
+        </aside>
+
+        <main class="chat-area">
+            <div class="topbar">MIS Chat</div>
+            <div id="chat"></div>
+
+            <div class="input-area">
+                <input id="msg" type="text" placeholder="Scrie un mesaj..." onkeydown="handleEnter(event)">
+                <button class="main-btn" onclick="send()">Trimite</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
