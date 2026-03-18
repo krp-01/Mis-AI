@@ -61,7 +61,7 @@ async function signup() {
         incredere: valueToTrait(incredere, "increzator", "retinut")
     };
 
-    const res = await fetch("http://127.0.0.1:5000/signup", {
+    const res = await fetch("https://mis-ai.onrender.com/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
@@ -87,7 +87,7 @@ async function login() {
         return;
     }
 
-    const res = await fetch("http://127.0.0.1:5000/login", {
+    const res = await fetch("https://mis-ai.onrender.com/signin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
